@@ -156,7 +156,7 @@ const QuizArea = () => {
             Retry Quiz
           </button>
           <button
-            onClick={handleBackToHome}
+            onClick={()=>navigate('/')}
             className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition duration-200"
           >
             Back to Home

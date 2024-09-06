@@ -78,7 +78,7 @@ const LandingPage = () => {
     console.log({ category });
 
     try {
-      const response = await fetch(process.env.server_url, {
+      const response = await fetch("https://quiz-app-backend-1-yj4m.onrender.com/api/quiz/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -99,16 +99,15 @@ const LandingPage = () => {
 
   return (
     <>
-      {/* 6dfaee */}
       {/* <BsMoonStarsFill className=" mt-8 mx-3 absolute text-5xl text-gray-500"/> */}
       <div
         ref={tiltRef}
         style={{ "--clr": "#FFEE58" }}
-        className="mt-16 flex flex-col justify-around items-center w-[50%] h-[85vh] mx-auto bg-opacity-30 bg-black pt-1 p-8 tilt-container overflow-hidden myeff"
+        className="mt-16 flex flex-col justify-around items-center w-full md:w-[50%] lg:w-[50%] h-[85vh] mx-auto bg-opacity-30 bg-black pt-1 p-8 tilt-container overflow-hidden myeff"
       >
         <div>
 
-        <h1 className="text-center text-5xl mb-4 font-bold tracking-wider text-white">
+        <h1 className="text-center text-5xl mb-4 font-bold tracking-wider mt-2 text-white">
           Mid<span className=" text-yellow-300 animate-pulse">N</span>ight<span className="animate-pulse text-yellow-300" >T</span>rivia 
           
         </h1>
@@ -182,14 +181,14 @@ const LandingPage = () => {
           <button
             type="submit"
             href="#_"
-            class="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group"
+            className="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group"
           >
-            <span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
-            <span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
-            <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-            <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-            <span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
-            <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
+            <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+            <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+            <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+            <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+            <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
               Start Quiz
             </span>
           </button>

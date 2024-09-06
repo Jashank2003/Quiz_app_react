@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import Landingpage from './components/LandingPage';
+import Landingpage from './components/LandingPage'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import QuizArea from './components/QuizArea';
 import './index.css'; 
