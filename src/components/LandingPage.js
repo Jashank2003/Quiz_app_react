@@ -9,6 +9,7 @@ import VanillaTilt from "vanilla-tilt";
 const LandingPage = () => {
   const [difficulty, setDifficulty] = useState("any");
   const [category, setCategory] = useState("any");
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
   const navigate = useNavigate();
   const tiltRef = useRef(null);
 
@@ -70,12 +71,21 @@ const LandingPage = () => {
     setCategory(e.target.value);
   };
 
+
+  const handleHelpOpen = () => {
+    setIsHelpOpen(true);
+  };
+
+  const handleHelpClose = () => {
+    setIsHelpOpen(false);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     console.log("Form Submitted");
-    console.log({ difficulty });
-    console.log({ category });
+    // console.log({ difficulty });
+    // console.log({ category });
 
     try {
       const response = await fetch("https://quiz-app-backend-1-yj4m.onrender.com/api/quiz/", {
@@ -87,14 +97,14 @@ const LandingPage = () => {
       });
 
       const data = await response.json();
-      console.log("Quiz Questions:", data);
+      console.log("request served successfully");
 
       navigate("/quiz", { state: { questions: data.results } });
     } catch (error) {
       console.error("Error fetching quiz questions:", error);
     }
 
-    console.log("try catch done");
+    // console.log("try catch done");
   };
 
   return (
@@ -192,6 +202,36 @@ const LandingPage = () => {
               Start Quiz
             </span>
           </button>
+          <button
+            type="button"
+            onClick={handleHelpOpen}
+            className="  underline text-gray-500 hover:text-gray-300"
+          >
+            Help
+          </button>
+
+          {/* Help Dialog */}
+          {isHelpOpen && (
+            <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <p className="text-black mb-4">
+                  Due to Render's policy for free-tier users, the backend server
+                  may occasionally go dormant after a period of inactivity. When
+                  this happens, there might be a delay in starting the quiz
+                  while the server wakes up. If you encounter this issue, you
+                  can simply reload the app or try again after a few moments. I
+                  am currently exploring other hosting solutions to avoid this
+                  delay and ensure a smoother user experience.
+                </p>
+                <button
+                  onClick={handleHelpClose}
+                  className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
           <p className="text-center ">Unleash your inner trivia champion with MidnightTrivia! Where your late-night brainiac skills get a workout and you might just surprise yourself!</p>
         </form>
       </div>
