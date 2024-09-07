@@ -2,6 +2,10 @@
 
 MidnightTrivia is a full-stack quiz application developed using the MERN stack (MongoDB, Express.js, React.js, and Node.js). It fetches quiz questions from the Open Trivia DB API and allows users to select various categories and difficulty levels. The application is responsive, designed for all screen sizes, and hosted on both Render (for the backend) and Vercel (for the frontend).
 
+![Screenshot 2024-09-07 114409](https://github.com/user-attachments/assets/44108a3f-abb9-44f6-8d7d-d5cea8748a45)
+![Screenshot 2024-09-07 114351](https://github.com/user-attachments/assets/ae530c31-7d87-409c-9263-f07fdf2de335)
+![Screenshot 2024-09-07 114534](https://github.com/user-attachments/assets/10c5f141-1273-43e0-ba44-59d4174028ee)
+
 ## Live Application
 
 - **Frontend (React):** Hosted on Vercel [View Here](https://quiz-app-react-peach.vercel.app/)
