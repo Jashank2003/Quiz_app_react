@@ -88,7 +88,7 @@ const LandingPage = () => {
     // console.log({ category });
 
     try {
-      const response = await fetch("https://quiz-app-backend-1-yj4m.onrender.com/api/quiz/", {
+      const response = await fetch("https://quiz-app-backend-b8ld.onrender.com/api/quiz/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
